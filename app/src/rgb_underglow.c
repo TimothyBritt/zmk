@@ -36,6 +36,10 @@
 #include <zmk/split/bluetooth/central.h>
 #endif
 
+#if !IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+#include <zmk/split/bluetooth/peripheral_layers.h>
+#endif
+
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #if !DT_HAS_CHOSEN(zmk_underglow)
@@ -279,7 +283,7 @@ static void zmk_led_write_pixels(void) {
 
 #if !UNDERGLOW_INDICATORS_ENABLED
 static int zmk_led_generate_status(void) { return 0; }
-static void custom_layer_active(void) {}
+static void custom_layer_active(int layer) { return peripheral_layer_active(layer); }
 
 #else
 
