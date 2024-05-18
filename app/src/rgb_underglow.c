@@ -279,7 +279,7 @@ static void zmk_led_write_pixels(void) {
 
 #if !UNDERGLOW_INDICATORS_ENABLED
 static int zmk_led_generate_status(void) { return 0; }
-// static bool custom_layer_active(int layer) { return peripheral_layer_active(layer); }
+static void custom_layer_active(void) {}
 
 #else
 
