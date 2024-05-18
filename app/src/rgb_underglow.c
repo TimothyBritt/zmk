@@ -406,7 +406,7 @@ static int zmk_led_generate_status(void) {
         active_endpoint.transport == ZMK_TRANSPORT_USB) { // connected AND active
         status_pixels[DT_PROP(UNDERGLOW_INDICATORS, usb_state)] = white;
     } else if (usb_state == ZMK_USB_CONN_HID) { // connected
-        status_pixels[DT_PROP(UNDERGLOW_INDICATORS, usb_state)] = nice_blu;
+        status_pixels[DT_PROP(UNDERGLOW_INDICATORS, usb_state)] = nice_blue;
     } else if (usb_state == ZMK_USB_CONN_POWERED) { // powered
         status_pixels[DT_PROP(UNDERGLOW_INDICATORS, usb_state)] = red;
     } else if (usb_state == ZMK_USB_CONN_NONE) { // disconnected
