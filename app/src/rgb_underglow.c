@@ -406,7 +406,7 @@ static int zmk_led_generate_status(void) {
         active_endpoint.transport == ZMK_TRANSPORT_USB) { // connected AND active
         status_pixels[DT_PROP(UNDERGLOW_INDICATORS, usb_state)] = white;
     } else if (usb_state == ZMK_USB_CONN_HID) { // connected
-        status_pixels[DT_PROP(UNDERGLOW_INDICATORS, usb_state)] = nice_blue;
+        status_pixels[DT_PROP(UNDERGLOW_INDICATORS, usb_state)] = nice_blu;
     } else if (usb_state == ZMK_USB_CONN_POWERED) { // powered
         status_pixels[DT_PROP(UNDERGLOW_INDICATORS, usb_state)] = red;
     } else if (usb_state == ZMK_USB_CONN_NONE) { // disconnected
@@ -466,16 +466,17 @@ static void indicate_custom_layers(void) {
         struct led_rgb col_blue = MK_BLUE;
 
         for (int i = 0; i < STRIP_NUM_PIXELS; i++) {
-        switch (i % 3) { // Modulus operator to cycle through 0, 1, 2
-            case 0:
-                pixels[i] = col_green; // Red
-                break;
-            case 1:
-                pixels[i] = col_red; // Green
-                break;
-            case 2:
-                pixels[i] = col_blue; // Blue
-                break;
+            switch (i % 3) { // Modulus operator to cycle through 0, 1, 2
+                case 0:
+                    pixels[i] = col_green; // Red
+                    break;
+                case 1:
+                    pixels[i] = col_red; // Green
+                    break;
+                case 2:
+                    pixels[i] = col_blue; // Blue
+                    break;
+            }
         }
     }
 }
