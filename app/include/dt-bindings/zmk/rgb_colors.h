@@ -14,4 +14,5 @@
 #define PURPLE 0x800080
 #define PINK 0xffc0cb
 #define WHITE 0xffffff
+#define SKYBLU 0x87ceeb
 #define ______ 0x000000
